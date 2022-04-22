@@ -27,19 +27,17 @@ h4 {
     font-family: 'Inter',sans-serif;
 }
 
-h1 {
-    font-size: 15rem;
+h1{
+    font-size: 7rem;
 }
-
-h2 {
-    font-size: 14.2rem;
+h2{
+    font-size: 4rem;
 }
-
-h3 {
-    font-size: 5rem;
+h3{
+    font-size: 3rem;
 }
 h4{
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 @media screen and (min-width:1024px) {
@@ -176,3 +174,27 @@ a {
         font-size: 1.5rem;
     }
 } 
+/* title */
+.title{
+    text-align: center;
+}
+.line{
+    width: 2rem;
+    height: 0;
+    border: 3px solid var(--color-primary);
+    margin: 7px 3px;
+    display:inline-block;
+}
+.title__header{
+    display: inline-block;
+    color: var(--color-secondary);
+}
+@media screen and (min-width:768px){
+    .line{
+        width: 4rem;
+        height: 0;
+        border: 3px solid var(--color-primary);
+        margin: 10px 3px;
+        display:inline-block;
+    }
+}
