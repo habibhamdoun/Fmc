@@ -2,7 +2,10 @@ html {
     font-size: 62.5%;
     font-family:'Inter',sans-serif;
 }
-
+::placeholder{
+    color: #cdcbd7;
+    opacity: 0.6;
+}
 :root {
     --color-primary: #243370;
     --color-secondary: #E41F25;
@@ -155,3 +158,21 @@ a {
         font-size: 1.5rem;
     }
 }
+/* input */
+.input{
+    border-radius: 30px;
+    border:1px solid #ccc;
+    color: var(--color-primary);
+    font-size: 2rem;
+    outline: 0;
+    padding: 1.5rem 3.5rem;
+    box-shadow: 4px 5px 42px 3px rgba(54,54,54,0.16);
+    -webkit-box-shadow: 4px 5px 42px 3px rgba(54,54,54,0.16);
+    -moz-box-shadow: 4px 5px 42px 3px rgba(54,54,54,0.16);
+}
+
+@media screen and (min-wdith:1024px){
+    .input{
+        font-size: 1.5rem;
+    }
+} 
