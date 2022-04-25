@@ -537,3 +537,64 @@ a {
         margin: 2rem 2rem;
     }
 }
+/* info */
+.info__text{
+    margin: 2rem;
+}
+.info{
+    background: url(../images/plane-blur.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 85vw;
+    overflow-y: hidden;
+}
+.info__title{
+    font-size: 2rem;
+}
+.info__text{
+    padding: 1rem;
+    text-align: center;
+    overflow: hidden;
+    width: 75vw;
+    background-color: white;
+    box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
+    -webkit-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
+    -moz-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
+    background: #ffffff70;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+} 
+@media screen and (min-width:768px){
+    .info{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url(/images/pexels-pixabay-358319.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+    }
+    .info__title{
+        text-align: center;
+        position: fixed;
+        top: 0%;
+    }
+
+    .info__text{
+        margin-left: 1rem;
+        max-width: 40%;
+        height: 70%;
+        margin-top: 15rem;
+        overflow: hidden;
+        background-color: white;
+        box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
+        -webkit-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
+        -moz-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
+        align-self: center;
+        background: #ffffff80;
+    } 
+}
