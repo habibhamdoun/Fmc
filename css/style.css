@@ -1,5 +1,6 @@
 html {
     font-size: 62.5%;
+    height: fit-content;
 }
 
 ::placeholder {
@@ -16,6 +17,7 @@ html {
 
 * {
     box-sizing: border-box;
+    color: var(--color-primary);
 }
 
 body {
@@ -51,6 +53,9 @@ h3 {
 
 h4 {
     font-size: 2rem;
+}
+p{
+    margin: 0;
 }
 
 @media screen and (min-width:768px) {
@@ -213,14 +218,21 @@ a {
 /* title */
 .title {
     text-align: center;
+    margin: 0%;
 }
 
 .line {
     width: 2rem;
     height: 0;
-    border: 3px solid var(--color-primary);
+    border: 3px solid ;
     margin: 7px 3px;
     display: inline-block;
+}
+.line--red{
+    border-color: var(--color-secondary);
+}
+.line--blue{
+    border-color: var(--color-primary);
 }
 
 .title__header {
@@ -491,4 +503,42 @@ a {
     background-size: cover;
     background-position: center;
     }
+}
+/* info */
+.info__text{
+    margin: 2rem;
+}
+@media screen and (min-width:768px){
+    .info{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url(/images/pexels-pixabay-358319.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+    }
+    .info__title{
+        text-align: center;
+        position: fixed;
+        top: 0%;
+    }
+    
+    .info__text{
+        margin-left: 1rem;
+        max-width: 30%;
+        height: 70%;
+        margin-top: 15rem;
+        overflow: hidden;
+        background-color: white;
+        box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
+        -webkit-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
+        -moz-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
+        align-self: flex-start;
+        /* border-top: 10px solid var(--color-primary);
+        border-right: 10px solid var(--color-primary);*/
+    } 
 }
