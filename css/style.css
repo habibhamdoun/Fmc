@@ -598,3 +598,13 @@ a {
         background: #ffffff80;
     } 
 }
+/* clients */
+.clients__icons{
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+.client__img{
+    align-self: center;
+    justify-self: center;
+    width: 55%;
+}
