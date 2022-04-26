@@ -531,6 +531,9 @@ a {
     .about__btn{
         align-self: flex-start;
     }
+    .about{
+        margin: 2rem;
+    }
 }
 @media screen and (min-width:1024px){
     .about__img{
@@ -546,7 +549,7 @@ a {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 85vw;
+    width: 100vw;
     overflow-y: hidden;
 }
 .info__title{
@@ -556,7 +559,7 @@ a {
     padding: 1rem;
     text-align: center;
     overflow: hidden;
-    width: 75vw;
+    width: 90vw;
     background-color: white;
     box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
     -webkit-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
@@ -576,7 +579,7 @@ a {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        height: 100vh;
+        width: 100vw;
     }
     .info__title{
         text-align: center;
@@ -625,31 +628,3 @@ a {
         width: 55%;
     }
 }
-/* TEST */
-/* .test__client{
-    position: relative;
-}
-.client__image{
-    position: absolute;
-}
-.box {
-    color: white;
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,0) 44%, rgba(0,0,0,1) 59%);
-    z-index: 2;
-    width: 24rem;
-    height: 17rem;
-    position: absolute;
-    top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-.box__header{
-    margin: 0%;
-}
-.box__content{
-    font-size: 2.2rem;
-    margin-left: 0.5rem;
-}  */
