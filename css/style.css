@@ -166,6 +166,7 @@ a {
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
+    text-transform: capitalize;
     }
 .flip-card-front {
     background-color: white;
@@ -177,7 +178,7 @@ a {
     transform: rotateY(180deg);
     font-size: 1.5rem;
     border-radius: 10px;
-    overflow: hidden;
+    overflow: auto;
 }
 @media screen and (min-width:600px){
     .flip-card{
@@ -343,7 +344,9 @@ a {
 
 /* nav */
 .nav {
-    background-color: white;
+    z-index:1;
+    width: 100%;
+    /* background-color: #ffffff30; */
     box-shadow: 0px 0px 21px 4px rgba(0, 0, 0, 0.07);
     -webkit-box-shadow: 0px 0px 21px 4px rgba(0, 0, 0, 0.07);
     -moz-box-shadow: 0px 0px 21px 4px rgba(0, 0, 0, 0.07);
@@ -351,10 +354,14 @@ a {
     flex-direction: column;
     height: 6rem;
     transition: height 0.5s;
+    position: fixed;
+    top:0%;
 }
 
 .collapsible--expanded.nav {
     height: 100vh;
+    background-color: #ffffff;
+    transition: background 1s;
 }
 
 .nav__list {
@@ -393,18 +400,16 @@ a {
 
 @media screen and (min-width:768px) {
     .nav {
-        position: fixed;
-        top: 0;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         height: 8rem;
     }
-
+    
     .nav__collapsible__container {
         display: none;
     }
-
+    
     .nav__list {
         display: flex;
         flex-direction: row;
@@ -412,22 +417,24 @@ a {
         font-size: 2.2rem;
         opacity: 1;
     }
-
+    
     .nav__item :hover {
         color: var(--color-secondary);
     }
-
+    
     .nav__item {
-        margin: 0 0 0 3rem;
+    margin: 0 0 0 3rem;
+    margin-right: 1rem;
     }
-
+    
     .nav__item a {
         border: 0;
         white-space: nowrap;
         transition: color 0.4s;
     }
-
+    
     .nav__brand {
+        padding-top: 1rem ;
         height: 100%;
         padding: 0;
     }
@@ -491,19 +498,22 @@ a {
 .hero__toggle {
     display: flex;
     flex-direction: column;
-    font-size: 2.5rem
+    font-size: 2.5rem;
 }
 
 .hero__toggle>p {
     margin: 0;
+    color: white;
 }
 
 .hero__arrow {
     text-align: center;
+    color: white;
     margin-bottom: 20px;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
     animation-name: jumpingArrow;
+    animation-timing-function: ease-in-out;
     animation-duration: 1s;
 }
 
@@ -548,6 +558,10 @@ a {
     }
 }
 /* about */
+.about{
+    /* background-color: #e41f2620; */
+    margin-top: 6rem;
+}
 .about__content{
     margin: 0 2rem;
     display: flex;
@@ -580,6 +594,7 @@ a {
     }
     .about{
         margin: 2rem;
+        margin-top: 10rem;
     }
 }
 @media screen and (min-width:1024px){
@@ -620,7 +635,7 @@ a {
         height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         background: url(/images/pexels-pixabay-358319.jpg);
         background-size: cover;
@@ -630,16 +645,14 @@ a {
     }
     .info__title{
         text-align: center;
-        position: fixed;
         top: 0%;
     }
 
     .info__text{
-        margin-left: 1rem;
-        max-width: 40%;
-        height: 70%;
+        width: 97%;
+        height: fit-content;
         margin-top: 15rem;
-        overflow: hidden;
+        overflow: scroll;
         background-color: white;
         box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
         -webkit-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
@@ -674,11 +687,16 @@ a {
         justify-self: center;
         width: 55%;
     }
+    .clients{
+        margin-top: 5rem;
+        overflow: hidden;
+    }
 }
 /* services */
 .services{
     height: 100vh;
     width: 100vw;
+    margin-top: 3rem;
 }
 .services__content{
     display: flex;
@@ -690,7 +708,7 @@ a {
 @media screen and (min-width:768px) {
     .triangle{
         height: 70%;
-        top: 50%;
+        top: 65%;
     }
     .triangle--right{
         clip-path: polygon(55% 48%, 0 0, 0 100%);
@@ -719,18 +737,18 @@ a {
     margin-top: 1rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 .row .flip-card{
     font-size: 1rem;
+    margin: 1rem;
+    width: 10rem;
 }
 .row--3{
     width: 100%;
     height: 25%;
-}
-.row--3 .flip-card{
-    width: 15%;
 }
 .row .icon__header{
     font-size: 1.2rem;
@@ -739,11 +757,20 @@ a {
     font-size: 3.5rem;
 }
 @media screen and (min-width:768px) {
+    .row{
+    justify-content: space-around;
+    }
+    .row .flip-card{
+        width: 13rem;
+    }
+    .row--2{
+    justify-content: space-evenly;
+    }
     .row--3 .flip-card{
         width: 15%;
     }
     .row .icon__header{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .row .icon{
         font-size: 5rem;
@@ -758,12 +785,8 @@ a {
     }
 }
 .row--2{
-    justify-content: space-evenly;
     width: 100%;
     height: 25%;
-}
-.row--2 .flip-card{
-    width: 15%;
 }
 .row--1{
     justify-content: center;
@@ -771,6 +794,66 @@ a {
     width: 100%;
     height: 25%;
 }
-.row--1 .flip-card{
-    width: 15%;
+/* contact */
+.contact{
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.contact__field{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+}
+.contact__item{
+    background-color: #24337030;
+    border-radius: 10px;
+    border: 0;
+    max-width: 80%;
+    width: 80%;
+}
+.contact__item:focus{
+    outline: 0;
+}
+.contact__field label{
+    align-self: flex-start;
+    margin-left: 4.5rem;
+    margin-top: 2rem;
+    color: var(--color-primary) ;
+}
+.contact__section{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (min-width:768px) {
+    .contact__item{
+        width: 90vw;
+    }
+    .contact__inputs{
+        display: flex;
+        flex-direction: row;
+    }
+    .contact__item{
+        width: 50vw;
+        height: 10vh;
+    }
+    .contact__message{
+        height: 30vh;
+        width: 70vw;
+    }
+    .contact__field{
+        align-items: center;
+        justify-content: center;
+    }
+    .contact__field label{
+        align-self: flex-start;
+        margin-top: 2rem;
+    }
 }
