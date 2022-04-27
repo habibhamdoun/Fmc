@@ -123,8 +123,7 @@ a {
 .icon {
     font-size: 5rem;
     color: var(--color-primary);
-    padding: 2rem;
-    margin: 1rem;
+    padding-top: 2rem;
 }
 
 .icon__container {
@@ -143,7 +142,7 @@ a {
 .flip-card {
     background-color: transparent;
     width: 30%;
-    height: 40%;
+    height: 100%;
     border: 1px solid #f1f1f1;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     border-radius: 10px;
@@ -182,8 +181,8 @@ a {
 }
 @media screen and (min-width:600px){
     .flip-card{
-        width: 20%;
-        height: 35%;
+        width: 30%;
+        height: 100%;
     }
 }
 /* buttons */
@@ -679,6 +678,7 @@ a {
 /* services */
 .services{
     height: 100vh;
+    width: 100vw;
 }
 .services__content{
     display: flex;
@@ -690,7 +690,7 @@ a {
 @media screen and (min-width:768px) {
     .triangle{
         height: 70%;
-        top: 20%;
+        top: 50%;
     }
     .triangle--right{
         clip-path: polygon(55% 48%, 0 0, 0 100%);
@@ -709,9 +709,68 @@ a {
         right: 0;
     }
     .triangle--bottom{
-        width: 60%;
+        width: 50%;
     }
     .triangle--top{
-        width: 65%;
+        width: 55%;
     }
+}
+.row{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.row .flip-card{
+    font-size: 1rem;
+}
+.row--3{
+    width: 100%;
+    height: 25%;
+}
+.row--3 .flip-card{
+    width: 15%;
+}
+.row .icon__header{
+    font-size: 1.2rem;
+}
+.row .icon{
+    font-size: 3.5rem;
+}
+@media screen and (min-width:768px) {
+    .row--3 .flip-card{
+        width: 15%;
+    }
+    .row .icon__header{
+        font-size: 2rem;
+    }
+    .row .icon{
+        font-size: 5rem;
+    }
+}
+@media screen and (max-width:350px) {
+    .row .icon__header{
+        font-size: 1rem;
+    }
+    .row .icon{
+        font-size: 3rem;
+    }
+}
+.row--2{
+    justify-content: space-evenly;
+    width: 100%;
+    height: 25%;
+}
+.row--2 .flip-card{
+    width: 15%;
+}
+.row--1{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+}
+.row--1 .flip-card{
+    width: 15%;
 }
