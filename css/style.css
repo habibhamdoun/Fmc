@@ -832,13 +832,14 @@ a {
 }
 .contact__field label{
     align-self: flex-start;
-    margin-left: 4.5rem;
     margin-top: 2rem;
+    margin-left: 7rem;
     color: var(--color-primary);
     font-size: 2rem;
 }
 .contact__btn{
     padding: 2rem 5rem;
+    margin-top: 3rem;
 }
 .contact__alternative{
     color: var(--color-primary);
@@ -859,7 +860,7 @@ a {
     }
     .contact__message{
         height: 30vh;
-        width: 70vw;
+        width: 75vw;
     }
     .contact__field{
         align-items: center;
@@ -867,7 +868,7 @@ a {
     }
     .contact__field label{
         align-self: flex-start;
-        margin-top: 2rem;
+        margin: 2rem 0 0 0;
     }
     .contact__alternative{
         font-size: 3rem;
