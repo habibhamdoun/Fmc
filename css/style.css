@@ -173,12 +173,17 @@ a {
     color: black;
 }
 .flip-card-back {
+    width: fit-content;
     background-color: var(--color-primary);
     color: white;
     transform: rotateY(180deg);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     border-radius: 10px;
     overflow: auto;
+    padding: 0.5rem;
+}
+.flip-card-back p{
+    text-transform: none;
 }
 @media screen and (min-width:600px){
     .flip-card{
