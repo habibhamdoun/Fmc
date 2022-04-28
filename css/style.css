@@ -121,8 +121,6 @@ a {
 
 /* icons */
 .icon {
-    font-size: 5rem;
-    color: var(--color-primary);
     padding-top: 1rem;
     fill: var(--color-primary);
     width: 40%;
