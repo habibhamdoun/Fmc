@@ -19,11 +19,35 @@
     </script>
     <script type="text/javascript">
         window.onload = function() {
+            let dates=[];
+            let date1= Date.now();
+            console.log(date1)
             document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
+                // if(date2-date1 < 43200000) return
                 // generate a five digit number for the contact_number variable
                 this.contact_number.value = Math.random() * 100000 | 0;
                 // these IDs from the previous steps
+                if(document.getElementById('nameInput').value === ''){
+                    document.getElementById('errorTextName').innerText='Please type in a Name!';
+                    console.log('invalid name')
+                    return
+                }
+                else if(document.getElementById('emailInput').value === ''){
+                    document.getElementById('errorTextEmail').innerText='Please type in an Email!';
+                    return
+                }
+                else if(document.getElementById('messageInput').value === ''){
+                    document.getElementById('errorTextMessage').innerText='Please type in a Message!';
+                    return
+                }
+                let date=Date.now();
+                dates.push(date);
+                let check=[];
+                check.length=0;
+                check =dates.slice(-2);
+                console.log(check)
+                if((check[1]-check[0]<43200000) || (check[1]-check[0]===NaN)) return  document.getElementById('errorTextName').innerText=`Unable to send more than 1 email every 24 hours`;
                 emailjs.sendForm('service_ia13vql', 'template_5dzuq58', this )
                     .then(function() {
                         console.log('SUCCESS!');
@@ -42,18 +66,18 @@
             <h2 class="title__header">Contact Us</h2>
             <div class="line line--blue"></div>
         </div>
-        <div class="contact__icons">
-            
-        </div>
         <form id="contact-form" class="contact__field" autocomplete="off">
             <input type="hidden"  name="contact_number">
                     <label>Name:</label>
-                    <input type="text" name="user_name" class="contact__item contact__input">
-                    <label>Email:</label>
-                    <input type="email" name="user_email" class="contact__item contact__input">
-                <label>Message:</label>
-                <textarea name="message" class="contact__item contact__message"></textarea>
-            <input class="btn btn--primary contact__btn" type="submit" value="Send" class="contact__item">
+                    <input id="nameInput" type="text" name="user_name" class="contact__item contact__input">
+                    <h6 id="errorTextName"></h6>
+                    <label>Return Email:</label>
+                    <input id="emailInput" type="email" name="user_email" class="contact__item contact__input">
+                    <h6 id="errorTextEmail"></h6>
+                    <label>Message:</label>
+                    <textarea id="messageInput" name="message" class="contact__item contact__message"></textarea>
+                    <h6 id="errorTextMessage"></h6>
+            <input class="btn btn--outline btn--primary contact__btn" type="submit" value="Send" class="contact__item">
         </form>
         <div class="contact__alternative">
             <ul class="list list--inline">
