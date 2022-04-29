@@ -198,7 +198,7 @@ a {
 }
 /* buttons */
 .btn {
-  /* border-radius: 10px; */
+  outline: 0;
   border: 0;
   cursor: pointer;
   font-size: 1.8rem;
@@ -928,5 +928,64 @@ a {
     width: 20%;
     align-self: flex-start;
     margin-left: 7vw;
+  }
+}
+/* page */
+.page{
+  height: fit-content;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.page__img{
+  background: url(../images/pexels-norma-mortenson-4391478.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 90%;
+  height: 40vh;
+  margin-top: 2rem;
+}
+.page__content{
+  width: 90%;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+.page__content .title{
+  align-self: flex-start;
+}
+.page__btn{
+  align-self: center;
+}
+@media screen and (min-width:768px) {
+  .page{
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+  }
+  .page__img{
+    position: relative;
+    width: 55vw;
+    height: 75vh;
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+    margin-left: 10vw;
+  }
+  .page__content{
+    width: 35%;
+    height: fit-content;
+    background-color: white;
+    position: absolute;
+    left: 15%;
+    bottom: 0;
+    z-index: 1;
+    margin-left: 10vw;
+  }
+  .page__text{
+    padding: 1rem 0;
   }
 }
