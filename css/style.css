@@ -320,7 +320,7 @@ a {
 /* collapsibles */
 .collapsible__toggle {
   transition: transform 0.7s;
-  color: var(--color-accent);
+  fill: var(--color-accent);
 }
 
 .collapsible__content {
@@ -401,6 +401,8 @@ a {
 
 .nav__collapsible__container {
   padding-right: 2rem;
+  width: 10%;
+  height: 40%;
 }
 
 @media screen and (min-width: 768px) {
