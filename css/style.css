@@ -882,16 +882,6 @@ a {
   flex-direction:column;
   align-items: center;
 }
-.contact__icon__container{
-  background-color: #73737360;
-  border: 2px solid var(--color-primary);
-  width: 4rem;
-  height: 4rem;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .contact__icon{
   width: 2rem;
   height: 2rem;
