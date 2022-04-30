@@ -534,33 +534,13 @@ a {
   animation-name: jumpingArrow;
   animation-timing-function: ease-in-out;
   animation-duration: 1s;
+  padding-bottom: 1rem;
 }
 
 @keyframes jumpingArrow {
   0% {
     transform: translateY(20px);
   }
-
-  12.5% {
-    transform: translateY(17.5px);
-  }
-
-  25% {
-    transform: translateY(15px);
-  }
-
-  50% {
-    transform: translateY(10px);
-  }
-
-  62.5% {
-    transform: translateY(7.5px);
-  }
-
-  75% {
-    transform: translateY(5px);
-  }
-
   100% {
     transform: translateY(0);
   }
