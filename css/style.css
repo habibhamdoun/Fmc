@@ -550,7 +550,7 @@ a {
     background: url(../images/hero-image-blur.webp);
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 95vh;
   }
 }
 /* about */
@@ -641,7 +641,7 @@ a {
 }
 @media screen and (min-width: 768px) {
   .info {
-    height: 90vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
