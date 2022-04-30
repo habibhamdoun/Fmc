@@ -490,7 +490,7 @@ a {
 }
 
 .hero__image {
-  background: url(../images/mobile-hero-2-blur.png);
+  background: url(../images/mobile-hero-2-blur.webp);
   height: 100%;
   width: 100vw;
   background-size: cover;
@@ -570,7 +570,7 @@ a {
     font-size: 4rem;
   }
   .hero__image {
-    background: url(../images/hero-image-blur.png);
+    background: url(../images/hero-image-blur.webp);
     background-size: cover;
     background-position: center;
   }
@@ -631,7 +631,7 @@ a {
   margin: 2rem;
 }
 .info {
-  background: url(../images/plane-blur.jpg);
+  background: url(../images/plane-blur.webp);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -668,7 +668,7 @@ a {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: url(/images/pexels-pixabay-358319.png);
+    background: url(/images/pexels-pixabay-358319.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -934,7 +934,7 @@ a {
   align-items: center;
 }
 .whyUs__img {
-  background: url(../images/pexels-tom-fisk-3856433.png);
+  background: url(../images/pexels-tom-fisk-3856433.webp);
   background-size: cover;
   background-position: center;
   width: 90vw;
@@ -994,7 +994,7 @@ a {
 }
 
 .section__img{
-  background: url(../images/pexels-tiger-lily-4484078.png);
+  background: url(../images/pexels-tiger-lily-4484078.webp);
   background-position:center;
   background-size: cover;
   width: 90vw;
