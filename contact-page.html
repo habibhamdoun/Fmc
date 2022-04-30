@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Contact Us</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('lzJUI_2YweveJOPtY');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            let dates=[];
+            let date1= Date.now();
+            console.log(date1)
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // if(date2-date1 < 43200000) return
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                if(document.getElementById('nameInput').value === ''){
+                    document.getElementById('errorTextName').innerText='Please type in a Name!';
+                    console.log('invalid name')
+                    return
+                }
+                else if(document.getElementById('emailInput').value === ''){
+                    document.getElementById('errorTextEmail').innerText='Please type in an Email!';
+                    return
+                }
+                else if(document.getElementById('messageInput').value === ''){
+                    document.getElementById('errorTextMessage').innerText='Please type in a Message!';
+                    return
+                }
+                let date=Date.now();
+                dates.push(date);
+                let check=[];
+                check.length=0;
+                check =dates.slice(-2);
+                console.log(check)
+                if((check[1]-check[0]<43200000) || (check[1]-check[0]===NaN)) return  document.getElementById('errorTextName').innerText=`Unable to send more than 1 email every 24 hours`;
+                emailjs.sendForm('service_ia13vql', 'template_5dzuq58', this )
+                    .then(function() {
+                        console.log('SUCCESS!');
+                        alert('Message sent!')
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</head>
+<body>
+    <nav class="nav collapsible" id="nav">
+        <div class="nav__brand__container">
+            <img src="images/logo-fmc-removebg-preview.png" class="nav__brand" alt="">
+            <div class="nav__collapsible__container"><svg xmlns="http://www.w3.org/2000/svg" class="collapsible__toggle" viewBox="0 0 448 512"><path d="M416 352c-8.188 0-16.38-3.125-22.62-9.375L224 173.3l-169.4 169.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25C432.4 348.9 424.2 352 416 352z"/></svg>
+            </div>
+        </div>
+        <ul class="list list--inline nav__list collapsible__content">
+            <li class="nav__item"><a href="./index.html">Home</a></li>
+            <li class="nav__item"><a href="/vision-page.html">Vision</a></li>
+            <li class="nav__item"><a href="./mission-page.html">Mission</a></li>
+            <li class="nav__item"><a href="./clients-page.html">Clients</a></li>
+            <li class="nav__item"><a href="./services-page.html">Services</a></li>
+            <li class="nav__item"><a href="./whyus-page.html">Why Us</a></li>
+            <li class="nav__item current-tab"><a href="./contact-page.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section class="contact" data-aos="fade-up">
+        <div class="title">
+            <div class="line line--blue"></div>
+            <h2 class="title__header">Contact Us</h2>
+            <div class="line line--blue"></div>
+        </div>
+        <form id="contact-form" class="contact__field" autocomplete="off">
+            <input type="hidden"  name="contact_number">
+                    <label>Name:</label>
+                    <input id="nameInput" type="text" name="user_name" class="contact__item contact__input">
+                    <h6 id="errorTextName"></h6>
+                    <label>Return Email:</label>
+                    <input id="emailInput" type="email" name="user_email" class="contact__item contact__input">
+                    <h6 id="errorTextEmail"></h6>
+                    <label>Message:</label>
+                    <textarea id="messageInput" name="message" class="contact__item contact__message"></textarea>
+                    <h6 id="errorTextMessage"></h6>
+            <input class="btn btn--outline btn--primary contact__btn" type="submit" value="Send" class="contact__item">
+        </form>
+        <div class="contact__alternative">
+            <ul class="list list--inline">
+                <li>www.fmc-supplychain.com</li>
+                <li>info@fmc-supplychain.com</li>
+                <li>Saudi Arabia- Al Riyadh</li>
+                <li>00966507885696</li>
+            </ul>
+        </div>
+    </section>
+    <script src="./js/script.js"></script>
+    <script src="https://kit.fontawesome.com/0bd04aefb6.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>

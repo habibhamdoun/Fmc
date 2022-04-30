@@ -17,12 +17,14 @@ html {
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--color-content);
   font-size: 3.3rem;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 .container {
@@ -79,7 +81,6 @@ p {
 a {
   text-decoration: none;
 }
-
 .link-arrow {
   color: var(--color-accent);
   text-transform: uppercase;
@@ -178,7 +179,6 @@ a {
   color: black;
 }
 .flip-card-back {
-  width: fit-content;
   background-color: var(--color-primary);
   color: white;
   transform: rotateY(180deg);
@@ -210,22 +210,26 @@ a {
   margin: 1rem 0;
   color: white;
 }
-.btn a {
-  color: white;
-}
-
 .btn--outline {
   background-color: white;
   transition-duration:  0.6s;
   transition-property: background color;
 }
 .btn--primary {
-  border: 2px solid var(--color-primary);
+  border: 3px solid var(--color-primary);
   color: var(--color-primary);
 }
 .btn--secondary {
   color: var(--color-secondary);
   border: 2px solid var(--color-secondary);
+}
+.btn--secondary a {
+  color: var(--color-secondary);
+  transition: color 0.7s;
+}
+.btn--primary a {
+  color: var(--color-primary);
+  transition: color 0.7s;
 }
 
 .btn--primary:hover {
@@ -237,6 +241,12 @@ a {
   background-color: var(--color-secondary);
   color: white;
   border: 2px solid var(--color-secondary);
+}
+.btn--primary:hover a{
+  color: white;
+}
+.btn--secondary:hover a{
+  color: white;
 }
 
 @media screen and (min-width: 1024px) {
@@ -352,7 +362,7 @@ a {
 .nav {
   z-index: 1;
   width: 100%;
-  /* background-color: #ffffff30; */
+  background-color: #ffffff60;
   box-shadow: 0px 0px 21px 4px rgba(0, 0, 0, 0.07);
   -webkit-box-shadow: 0px 0px 21px 4px rgba(0, 0, 0, 0.07);
   -moz-box-shadow: 0px 0px 21px 4px rgba(0, 0, 0, 0.07);
@@ -360,8 +370,8 @@ a {
   flex-direction: column;
   height: 6rem;
   transition: height 0.5s;
-  position: fixed;
-  top: 0%;
+  /* position: fixed;
+  top: 0%; */
 }
 
 .collapsible--expanded.nav {
@@ -401,6 +411,7 @@ a {
 
 .nav__collapsible__container {
   padding-right: 2rem;
+  margin-bottom: 1rem;
   width: 10%;
   height: 40%;
 }
@@ -454,7 +465,8 @@ a {
 /* hero */
 .hero {
   position: relative;
-  height: 100vh;
+  height: 90vh;
+  width: 100vw;
 }
 
 .hero__content {
@@ -478,7 +490,7 @@ a {
 }
 
 .hero__image {
-  background: url(../images/mobile-hero-2-blur.jpg);
+  background: url(../images/mobile-hero-2-blur.png);
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -558,7 +570,7 @@ a {
     font-size: 4rem;
   }
   .hero__image {
-    background: url(../images/hero-image-blur.jpg);
+    background: url(../images/hero-image-blur.png);
     background-size: cover;
     background-position: center;
   }
@@ -575,6 +587,9 @@ a {
 }
 .about__btn {
   align-self: center;
+}
+.about__btn a{
+  color: var(--color-primary);
 }
 .about__title .title__header {
   margin: 0;
@@ -594,6 +609,8 @@ a {
   }
   .about__img {
     width: 80%;
+    -webkit-box-shadow: 28px 28px 0px 5px var(--color-primary); 
+    box-shadow: 28px 28px 0px 5px var(--color-primary);
   }
   .about__btn {
     align-self: flex-start;
@@ -601,6 +618,7 @@ a {
   .about {
     margin: 2rem;
     margin-top: 10rem;
+    height: 90vh;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -618,10 +636,15 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100vw;
+  height: 100vh;
   overflow-y: hidden;
 }
 .info__title {
   font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 .info__text {
   padding: 1rem;
@@ -634,16 +657,18 @@ a {
   -moz-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
   background: #ffffff70;
   border-radius: 5px;
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 @media screen and (min-width: 768px) {
   .info {
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: url(/images/pexels-pixabay-358319.jpg);
+    background: url(/images/pexels-pixabay-358319.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -665,9 +690,15 @@ a {
     -moz-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
     align-self: center;
     background: #ffffff80;
+    overflow-y: hidden;
+    overflow-x: hidden;
   }
 }
 /* clients */
+.clients{
+    display: flex;
+    flex-direction: column;
+}
 .clients__icons {
   display: flex;
   flex-direction: row;
@@ -681,7 +712,9 @@ a {
   align-items: center;
   justify-content: center;
 }
-
+.clients__header{
+  align-self: center;
+}
 @media screen and (min-width: 768px) {
   .clients__icons {
     display: grid;
@@ -694,7 +727,6 @@ a {
     width: 55%;
   }
   .clients {
-    margin-top: 5rem;
     overflow: hidden;
   }
 }
@@ -704,17 +736,16 @@ a {
   width: 100vw;
   margin-top: 3rem;
 }
-.services__content {
+.services__title{
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
 }
 @media screen and (min-width: 768px) {
   .triangle {
     height: 70%;
-    top: 65%;
+    top: 60%;
+    z-index: 0;
   }
   .triangle--right {
     clip-path: polygon(55% 48%, 0 0, 0 100%);
@@ -768,6 +799,8 @@ a {
   }
   .row .flip-card {
     width: 13rem;
+    height: 17rem;
+    z-index: 1;
   }
   .row--2 {
     justify-content: space-evenly;
@@ -804,12 +837,11 @@ a {
 .contact {
   background-color: white;
   height: fit-content;
-  width: 100vw;
+  width: 98vw;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  overflow: hidden;
 }
 .contact__field {
   display: flex;
@@ -884,11 +916,12 @@ a {
   align-items: center;
 }
 .whyUs__img {
-  background: url(../images/pexels-tom-fisk-3856433.jpg);
+  background: url(../images/pexels-tom-fisk-3856433.png);
   background-size: cover;
   background-position: center;
   width: 90vw;
   height: 50vh;
+  margin-bottom: 2rem;
   -webkit-box-shadow: 23px 23px 0px 2px var(--color-secondary);
   box-shadow: 23px 23px 0px 2px var(--color-secondary);
 }
@@ -916,7 +949,7 @@ a {
   }
   .whyUs__text {
     margin-top: 1rem;
-    font-size: 2.8rem;
+    font-size: 2.4rem;
   }
   .whyUs__img {
     height: 50vh;
@@ -930,83 +963,24 @@ a {
     margin-left: 7vw;
   }
 }
-/* page */
-.page{
-  height: fit-content;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: center;
-}
-.page__img{
-  background: url(../images/pexels-norma-mortenson-4391478.jpg);
-  background-position: center;
-  background-size: cover;
-  width: 90%;
-  height: 40vh;
-  margin-top: 2rem;
-}
-.page__content{
-  width: 90%;
-  margin: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center
-}
-.page__content .title{
-  align-self: flex-start;
-}
-.page__btn{
-  align-self: center;
-}
-@media screen and (min-width:768px) {
-  .page{
-    flex-direction: row; 
-    align-items: center;
-    justify-content: center;
-  }
-  .page__img{
-    position: relative;
-    width: 55vw;
-    height: 75vh;
-    background-position: center;
-    background-size: cover;
-    z-index: 0;
-    margin-left: 10vw;
-  }
-  .page__content{
-    width: 35%;
-    height: fit-content;
-    background-color: white;
-    position: absolute;
-    left: 15%;
-    bottom: 0;
-    z-index: 1;
-    margin-left: 10vw;
-  }
-  .page__text{
-    padding: 1rem 0;
-  }
-}
 /* section */
 .section{
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  height: 90%;
+  height: fit-content;
   width: 85vw;
   margin-top: 7%;
   margin-left: 5%;
 }
 
 .section__img{
-  background: url(../images/pexels-tiger-lily-4484078.jpg);
+  background: url(../images/pexels-tiger-lily-4484078.png);
   background-position:center;
   background-size: cover;
-  width: 100%;
-  height: 70vh;
+  width: 90vw;
+  height: 50vh;
 }
 .section__content{
   font-size: 2.5rem;
@@ -1024,10 +998,9 @@ a {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 90%;
     width: 90%;
-    margin-top: 7%;
-    margin-left: 5%;
+    height: 90%;
+    margin-bottom: 10rem;
     -webkit-box-shadow: 38px 38px 0px 1px var(--color-secondary); 
     box-shadow: 38px 38px 0px 1px var(--color-secondary);
     border: 1px solid #00000010;
@@ -1038,10 +1011,13 @@ a {
     padding: 2rem;
   }
   .section__img{
-    width: 75vw;
-    height: 75vh;
+    width: 65vw;
+    height: 65vh;
   }
   .section__btn{
     align-self: flex-start;
   }
+}
+.current-tab a{
+  color: var(--color-secondary);
 }
