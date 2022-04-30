@@ -26,12 +26,6 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
 }
-
-.container {
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
 /* fonts */
 h1,
 h2,
@@ -45,7 +39,7 @@ h1 {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 h3 {
@@ -75,37 +69,12 @@ p {
   }
 
   h2 {
-    font-size: 4rem;
+    font-size: 6rem;
   }
 }
-
-/* links */
 a {
   text-decoration: none;
 }
-.link-arrow {
-  color: var(--color-accent);
-  text-transform: uppercase;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.link-arrow::after {
-  content: "-->";
-  margin-left: 5px;
-  transition: margin 0.15s;
-}
-
-.link-arrow:hover::after {
-  margin-left: 10px;
-}
-
-@media screen and (min-width: 1024px) {
-  .link-arrow {
-    font-size: 1.5rem;
-  }
-}
-
 /* list */
 .list {
   list-style: none;
@@ -372,14 +341,11 @@ a {
   flex-direction: column;
   height: 6rem;
   transition: height 0.5s;
-  /* position: fixed;
-  top: 0%; */
 }
 
 .collapsible--expanded.nav {
   height: 100vh;
   background-color: #ffffff;
-  transition: background 1s;
 }
 
 .nav__list {
@@ -565,6 +531,7 @@ a {
 }
 .about__btn {
   align-self: center;
+  margin-bottom: 2rem;
 }
 .about__btn a{
   color: var(--color-primary);
@@ -580,6 +547,7 @@ a {
 }
 .about__text {
   padding-bottom: 2rem;
+  font-size: 2rem;
 }
 @media screen and (min-width: 768px) {
   .about__title .title {
@@ -605,9 +573,6 @@ a {
   }
 }
 /* info */
-.info__text {
-  margin: 2rem;
-}
 .info {
   background: url(../images/vision-bg-mobile.webp);
   background-position: center;
@@ -625,6 +590,8 @@ a {
   width: 100%;
 }
 .info__text {
+  margin: 2rem;
+  font-size: 2.7rem;
   padding: 1rem;
   margin-bottom: 1rem;
   text-align: center;
@@ -659,6 +626,7 @@ a {
 
   .info__text {
     width: 97%;
+    font-size: 2.5rem;
     height: fit-content;
     margin-top: 15rem;
     overflow: scroll;
@@ -722,7 +690,7 @@ a {
 @media screen and (min-width: 768px) {
   .triangle {
     height: 70%;
-    top: 60%;
+    top: 65%;
     z-index: 0;
   }
   .triangle--right {
