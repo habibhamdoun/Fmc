@@ -492,7 +492,7 @@ a {
 .hero__image {
   background: url(../images/mobile-hero-2-blur.png);
   height: 100%;
-  width: 100%;
+  width: 100vw;
   background-size: cover;
   background-position: center;
 }
