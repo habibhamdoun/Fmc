@@ -155,7 +155,8 @@ a {
   transform: rotateY(180deg);
   font-size: 1.4rem;
   border-radius: 10px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 0.5rem;
 }
 .flip-card-back p {
